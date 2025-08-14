@@ -1,0 +1,409 @@
+Week 1 – Detailed Question Set (≈30 Q/A)
+	1	Define a computer according to the von Neumann model. Answer: A computer is a device that stores programs and data in the same memory and executes instructions sequentially under control of a central processing unit (CPU).
+	2	List the main components of a von Neumann architecture. Answer: CPU (consisting of an arithmetic logic unit and control unit), main memory, input/output devices and buses connecting these components.
+	3	Contrast von Neumann and Harvard architectures. Answer: In a von Neumann machine, instructions and data share the same memory and bus, which can cause bottlenecks. Harvard architecture uses separate memories and buses for instructions and data, allowing simultaneous access and improved throughput.
+	4	What is an instruction set architecture (ISA)? Answer: The ISA is the interface between hardware and software—it defines the set of operations, data types, registers, memory addressing modes and machine‑language formats that a processor can execute.
+	5	Distinguish between RISC and CISC. Answer: RISC (Reduced Instruction Set Computer) uses a small, simple set of instructions that execute in a single clock cycle, favouring speed and pipelining. CISC (Complex Instruction Set Computer) supports many varied and complex instructions that may take multiple cycles but can reduce program size.
+	6	Describe the function of the arithmetic logic unit (ALU). Answer: The ALU performs arithmetic operations (addition, subtraction, multiplication, division) and logical operations (AND, OR, NOT, XOR) on binary data.
+	7	Explain the role of CPU registers. Answer: Registers are small, fast storage locations inside the CPU that hold operands, intermediate results, memory addresses and control information; they enable rapid access compared to main memory.
+	8	What is a bus? Name two types of buses and their purpose. Answer: A bus is a communication pathway for transferring data, addresses or control signals between components. Examples: the data bus carries actual data between CPU and memory/devices, and the address bus carries memory addresses for reads and writes.
+	9	What is Moore’s law and how has it influenced computer architecture? Answer: Moore’s law observes that the number of transistors on an integrated circuit roughly doubles every 18–24 months. For decades it drove exponential improvements in performance and reductions in cost, influencing architectural choices such as pipelining and multicore designs.
+	10	Define pipelining in CPU design. Answer: Pipelining is a technique where instruction execution is divided into stages, allowing multiple instructions to be in different stages simultaneously, thereby increasing instruction throughput.
+	11	What is a superscalar architecture? Answer: Superscalar processors issue multiple instructions per clock cycle by providing multiple execution units; they can dispatch and complete more than one instruction at a time when dependencies permit.
+	12	Explain the concept of instruction‑level parallelism (ILP). Answer: ILP is the degree to which consecutive instructions in a single thread can be executed in parallel, either through pipelining, superscalar execution or out‑of‑order execution.
+	13	Describe Amdahl’s law and its implication for performance improvement. Answer: Amdahl’s law states that the overall speedup of a system is limited by the fraction of time the improved part is actually used. Even large improvements to one part yield diminishing returns if other parts dominate execution time.
+	14	What is the difference between clock speed and cycles per instruction (CPI)? Answer: Clock speed is the frequency at which a processor’s clock oscillates (Hz). CPI is the average number of clock cycles each instruction requires. Performance depends on both; a higher clock or lower CPI improves performance.
+	15	Explain the principle behind branch prediction. Answer: Branch prediction guesses the outcome of conditional instructions to keep the pipeline full. If the guess is correct, the pipeline flows smoothly; if incorrect, the mispredicted instructions must be flushed and re‑executed, incurring a penalty.
+	16	Define cache memory and its purpose. Answer: Cache is a small, fast memory located close to the CPU that stores recently accessed data and instructions. It reduces average memory access time by exploiting locality of reference.
+	17	Differentiate between L1 and L2 cache. Answer: L1 cache is the smallest and fastest cache located inside the CPU core; it typically has separate instruction and data caches. L2 cache is larger and slightly slower, may be shared by cores and acts as a second level of caching.
+	18	What is the significance of the control unit? Answer: The control unit interprets machine instructions, generates control signals to coordinate data movement, selects ALU operations and orchestrates the flow of execution within the CPU.
+	19	Describe the concept of multithreading. Answer: Multithreading allows a CPU core to maintain multiple threads’ state and switch between them rapidly, improving utilisation by filling pipeline bubbles and hiding latencies such as cache misses.
+	20	What is a multicore processor and why are multicore designs used? Answer: A multicore processor integrates two or more independent CPU cores on a single chip. Multicore designs improve throughput and energy efficiency when further single‑core performance scaling becomes difficult due to power and thermal limits.
+	21	Summarise major milestones in computer history from the 1940s to the present. Answer: Milestones include early electromechanical and vacuum‑tube computers (ENIAC, EDVAC), transistorisation in the 1950s, integrated circuits in the 1960s, microprocessors in the 1970s, personal computers in the 1980s, widespread networking and the web in the 1990s, smartphones and many‑core processors in the 2000s, and today’s work on machine‑learning accelerators and quantum computers.
+	22	What is wafer‑scale integration and why is it significant for machine‑learning chips? Answer: Wafer‑scale integration builds a chip as large as an entire silicon wafer rather than cutting the wafer into individual dies. It allows extremely large numbers of processing units and memory to be connected with high bandwidth and low latency—beneficial for machine‑learning workloads.
+	23	Define quantum computing in simple terms. Answer: Quantum computing uses quantum bits (qubits) that can exist in superpositions of states, enabling certain computations (e.g. factoring, search) to be performed more efficiently than classical bits allow.
+	24	Explain the concept of qubits compared to classical bits. Answer: Classical bits can be in one of two states (0 or 1). Qubits can be in a combination of 0 and 1 simultaneously (superposition) and can exhibit entanglement, where the state of one qubit is correlated with another. Measuring a qubit collapses it to a definite state.
+	25	Mention one advantage and one challenge of quantum computers. Answer: Advantage: they can, in principle, solve certain problems (like integer factorisation) exponentially faster than classical computers. Challenge: qubits are extremely fragile and susceptible to decoherence and noise, making error correction and scalability difficult.
+	26	Describe the difference between microprocessors and microcontrollers. Answer: A microprocessor contains only the CPU core and relies on external chips for memory and peripherals. A microcontroller integrates the CPU, memory (RAM and flash) and peripherals (timers, I/O ports) on a single chip, making it suitable for embedded systems.
+	27	What is endianness? Distinguish between big‑endian and little‑endian. Answer: Endianness determines the byte order of multi‑byte data types in memory. In big‑endian systems the most significant byte is stored at the lowest address; in little‑endian systems the least significant byte is stored first.
+	28	What is the function of the program counter (PC)? Answer: The PC holds the memory address of the next instruction to execute. After each instruction is fetched, the PC is incremented (or updated by a branch/jump).
+	29	Define bus bandwidth and bus latency. Answer: Bus bandwidth is the rate at which data can be transmitted across a bus (e.g. MB/s). Bus latency is the time it takes for a signal or a block of data to travel from the source to the destination on the bus.
+	30	What is the purpose of a processor’s cache‑coherence mechanism? Answer: In multicore systems, each core may have its own cache. Cache coherence protocols ensure that all caches reflect consistent values for shared data, preventing stale or conflicting copies when one core modifies a value.
+31. What is static power consumption in a microprocessor? Static power is the power dissipated even when a circuit is not switching. It comes from leakage currents—such as reverse‑bias leakage and sub‑threshold leakage—flowing through transistors and is present whenever the circuit is poweredvlsitutorials.com.
+32. What causes dynamic power consumption and how is it calculated? Dynamic power arises when circuits switch states; it includes the energy used to charge and discharge capacitive loads and short‑circuit currents when both pull‑up and pull‑down networks conductvlsitutorials.com. The switching component is given by an equation
+ 33. What steps occur during the fetch–decode–execute cycle? In the fetch stage, the CPU reads the instruction at the address in the program counter (PC) and increments the PCgeeksforgeeks.org. In the decode stage, it interprets the opcode and identifies operandsgeeksforgeeks.org. In the execute stage, it performs the operation (e.g. arithmetic, logic or control flow). Additional cycles may fetch operands or store resultsgeeksforgeeks.org.
+34. What happens to the program counter during the fetch stage? The CPU uses the PC to fetch the next instruction from memory and then increments the PC so it points to the following instructiongeeksforgeeks.org.
+35. Why do CPUs generate heat, and how is power related to heat? Processors consume electrical energy and dissipate it as heat because of resistance in their electronic circuitsen.wikipedia.org. Both dynamic and static power contribute to this dissipation; therefore, the more power a CPU draws, the more heat it must expelen.wikipedia.orgen.wikipedia.org.
+36. What is Thermal Design Power (TDP)? TDP is the maximum amount of heat a processor is expected to dissipate under real workloads; it guides the design of cooling systems so they can remove that heat without the CPU overheatingen.wikipedia.org.
+37. What is meant by the “performance wall” or performance barrier in single‑core processors? As transistor counts increased, clock frequencies could no longer scale proportionally because higher frequencies caused excessive power consumption and heat. This led to a performance wall: single‑core processors hit limits on clock scaling due to power and thermal constraintsmedium.com. Moving to multicore architectures helps bypass this barrier by improving throughput without raising each core’s frequencymedium.com.
+38. What is CPU frequency scaling (or dynamic voltage and frequency scaling)? CPU frequency scaling allows the operating system to raise or lower the processor’s clock frequency to save power or improve performance; it can adjust frequency automatically based on system load or user‑specified policieswiki.archlinux.org.
+39. How does reducing the clock frequency affect power consumption? Power consumed by switching circuits is proportional to the supply voltage squared and the clock frequency (P ∝ V² × f)vlsitutorials.comen.wikipedia.org. Lowering the frequency (and often the voltage) decreases dynamic power, which in turn reduces heat dissipation and energy usageen.wikipedia.org.
+40. How does the transition to multicore processors address the performance barrier? Multicore processors distribute workloads across multiple cores, allowing higher total throughput without increasing each core’s clock frequency. This mitigates the performance wall and keeps power and thermal output manageablemedium.com.
+41. Why is the microprocessor described as the “heart” of a computer? A microprocessor—also called the CPU—is a complete computation engine on a single chip; it performs the work in any normal computer (desktop, server or laptop), which is why it’s referred to as the computer’s heartcomputer.howstuffworks.com.
+42. What was the first commercially available microprocessor and what could it do? The Intel 4004, introduced in 1971, was the first microprocessor; it could only add and subtract four bits at a timecomputer.howstuffworks.com.
+43. Which microprocessor first enabled home computers, and what followed it? Intel’s 8080 (1974) was powerful enough to build a home computer, and the 8088 (1979) later powered the IBM PC. The PC market then progressed through the 80286, 80386, 80486, Pentium, Core and Xeon seriescomputer.howstuffworks.com.
+44. List three basic activities that any microprocessor performs. A microprocessor (1) performs arithmetic and logic operations via its ALU (addition, subtraction, multiplication and division); (2) moves data between memory locations; and (3) makes decisions and can jump to new instructions based on comparisonscomputer.howstuffworks.com.
+45. Name five key components or lines found in a simple microprocessor. A simple microprocessor uses (1) an address bus to send addresses to memory, (2) a data bus to send or receive data, (3) RD and WR lines to signal reading or writing, (4) a clock line to sequence operations and (5) a reset line to restart executioncomputer.howstuffworks.com.
+46. What purpose do the registers A, B and C serve in a simple microprocessor? They are latches built from flip‑flops that hold intermediate values; the instruction decoder issues control signals telling each register when to load data from the buscomputer.howstuffworks.com.
+47. What does the program counter do in a microprocessor? The program counter is a latch that can increment or reset; it holds the address of the next instruction and is updated every cyclecomputer.howstuffworks.com.
+48. What is the role of the test register? The test register stores results of comparisons (such as equality or greater/less checks) and the carry bit; the instruction decoder uses these stored bits to decide whether to jump or continue sequential executioncomputer.howstuffworks.com.
+49. What are tri‑state buffers and why does a microprocessor use them? Tri‑state buffers can drive a line with a 1, a 0 or disconnect entirely. They allow multiple components to connect to the same wire but ensure only one drives it at a timecomputer.howstuffworks.com.
+50. Define ROM and explain how a microprocessor reads from it. ROM (read‑only memory) is pre‑programmed with permanent bytes. The microprocessor uses the address bus to select a byte and, when the RD line is activated, the ROM places that byte onto the data buscomputer.howstuffworks.com.
+51. Define RAM and state one key difference between RAM and ROM. RAM (random‑access memory) contains bytes that the microprocessor can read or write depending on RD or WR signals. Unlike ROM, RAM loses its contents when power is removed (it is volatile)computer.howstuffworks.com.
+52. What is the BIOS and what does the microprocessor do with it at startup? On a PC, the ROM is called the BIOS (Basic Input/Output System). When the microprocessor starts, it executes BIOS instructions that test hardware and then load the boot sector from disk into RAM, initiating the operating‑system boot processcomputer.howstuffworks.com.
+53. Why do microprocessors need both ROM and RAM? ROM stores permanent instructions like the BIOS and retains them without power, while RAM provides writable storage for programs and data during execution but loses its contents when powered offcomputer.howstuffworks.com.
+54. What is an assembly language, and why is it used to program microprocessors? Assembly language assigns human‑readable mnemonics to machine instruction patterns; assemblers translate these words into binary opcodes that the processor executes, making programming easier than memorising bit patternscomputer.howstuffworks.com.
+55. Give two examples of assembly instructions and describe their purpose. Examples include LOADA mem (load register A from a memory address), ADD (add registers A and B and store the result in C), and conditional jumps like JEQ addr (jump to an address if the comparison indicates equality)computer.howstuffworks.com.
+56. Why can’t microprocessors rely on RAM alone? RAM is volatile and loses data when power is cut. Without ROM (which stores the BIOS or bootloader), a computer would have no instructions to execute at power‑on to load the operating system
+Computer Science Core Topics — Master Q&A Study Guide
+Processor Capabilities and Research
+Q: What is a processor?
+A: A processor, also known as a central processing unit (CPU), is the primary component that executes instructions in a computer.
+Q: What are the main components of a CPU?
+A: The main components are the Arithmetic Logic Unit (ALU), Control Unit (CU), and registers.
+Machine-Code Programs
+Q: What is machine code?
+A: Machine code is a set of binary instructions directly understood by the CPU.
+Q: What is the relationship between machine code and assembly language?
+A: Assembly language is a human-readable representation of machine code, using mnemonics for instructions.
+Roles & Forms of Computers in Modern Life
+Q: What is a general-purpose computer?
+A: A general-purpose computer can run many types of programs, making it adaptable for a wide range of tasks.
+Q: What is an embedded system?
+A: An embedded system is a dedicated computing device designed for specific control functions within a larger system.
+ARM Architecture & Embedded Systems
+Q: What does ARM stand for?
+A: ARM originally stood for Acorn RISC Machine, later Advanced RISC Machines. It is a family of RISC-based processor architectures.
+Q: What is RISC?
+A: RISC stands for Reduced Instruction Set Computer, a CPU design philosophy that uses a small set of simple instructions.
+Lesson 3: Key Takeaways Expanded
+Q: Why are general-purpose computers versatile?
+A: They can execute many different types of software, allowing them to handle diverse tasks across multiple domains.
+Q: What are supercomputers used for?
+A: Supercomputers are used for highly complex computations such as climate modeling, molecular simulations, and cryptanalysis.
+
+Topic 1 — Processor Capabilities and Research (45 Q&As)
+
+Section 1: Foundations of Processors
+	1	Q: What is a processor in computing? A: A processor, or central processing unit (CPU), is the main component of a computer that executes instructions from programs.
+	2	Q: What are the three main parts of a CPU? A: The Arithmetic Logic Unit (ALU) for calculations and logic, the Control Unit (CU) for directing operations, and registers for fast temporary storage.
+	3	Q: What is the role of the Arithmetic Logic Unit (ALU)? A: The ALU performs arithmetic operations (such as addition, subtraction) and logical operations (such as comparisons).
+	4	Q: What is the role of the Control Unit (CU)? A: The CU manages the flow of data and instructions between the CPU’s components and other parts of the computer.
+	5	Q: What are CPU registers? A: Registers are very small, ultra-fast memory locations inside the CPU used for immediate data storage during processing.
+	6	Q: What is the instruction cycle? A: The sequence of steps a CPU performs to execute an instruction: fetch, decode, execute, and store results.
+	7	Q: What is a clock cycle in a CPU? A: A clock cycle is a single tick of the CPU’s clock signal, during which a small part of an instruction can be processed.
+	8	Q: What is clock speed? A: Clock speed, measured in hertz (Hz), is the number of clock cycles the CPU can complete per second.
+
+Section 2: Measuring Processor Performance
+	9	Q: What does IPC stand for in processor performance? A: IPC stands for Instructions Per Cycle, the number of instructions a CPU can execute in one clock cycle.
+	10	Q: What is throughput in computing? A: Throughput is the amount of work a system can perform in a given period of time, often measured in tasks or instructions per second.
+	11	Q: What does FLOPS stand for? A: FLOPS stands for Floating-Point Operations Per Second, a measure of a computer’s ability to perform calculations with floating-point numbers.
+	12	Q: What is a floating-point number? A: A floating-point number is a number with a fractional part, represented in a format that can handle very large and very small values using scientific notation.
+	13	Q: How do floating-point numbers differ from integers? A: Integers are whole numbers without fractions, while floating-point numbers can represent fractions and a wider range of magnitudes.
+	14	Q: Why are floating-point operations important in computing performance? A: Many scientific, engineering, and graphics calculations require high precision and fractional values, which floating-point operations provide.
+	15	Q: What does MIPS stand for in CPU performance measurement? A: MIPS stands for Millions of Instructions Per Second, a measure of how many simple instructions a processor can execute in one second.
+
+Section 3: Processor Architecture & Enhancements
+	16	Q: What is pipelining in CPU architecture? A: Pipelining is a technique where multiple instruction steps are overlapped in execution to improve throughput.
+	17	Q: What is superscalar architecture? A: Superscalar CPUs can execute more than one instruction per clock cycle by using multiple execution units.
+	18	Q: What is out-of-order execution? A: A CPU performance feature that allows instructions to be executed as soon as their data is available, rather than strictly in order.
+	19	Q: What is hyper-threading? A: Hyper-threading is Intel’s implementation of simultaneous multithreading (SMT), allowing one physical CPU core to execute multiple instruction streams.
+	20	Q: What is a multi-core processor? A: A processor that contains two or more independent cores, each capable of executing instructions.
+	21	Q: What is cache memory in a CPU? A: Cache is very fast memory located close to the CPU cores that stores frequently used data and instructions.
+	22	Q: What are the common levels of CPU cache? A: L1 (smallest, fastest, per core), L2 (larger, slower, per core or shared), and L3 (largest, slowest, shared between cores).
+	23	Q: What is a CPU instruction set architecture (ISA)? A: The ISA defines the set of machine instructions the CPU can execute, such as x86 or ARM.
+
+Section 4: Power, Heat, and Efficiency
+	24	Q: What is TDP in processor specifications? A: TDP stands for Thermal Design Power, the maximum amount of heat a CPU is expected to generate under normal workloads.
+	25	Q: Why is power efficiency important in processors? A: It reduces heat, energy costs, and battery drain in portable devices.
+	26	Q: What is dynamic voltage and frequency scaling (DVFS)? A: DVFS is a power-saving technique where the CPU lowers its voltage and clock speed during low workloads.
+	27	Q: What is throttling in CPUs? A: Throttling is the intentional reduction of CPU speed to prevent overheating.
+
+Section 5: Specialised Processing & Trends
+	28	Q: What is a GPU, and how does it differ from a CPU? A: A GPU (Graphics Processing Unit) is specialised for parallel processing, making it faster for tasks like graphics rendering and AI workloads.
+	29	Q: What is a DSP in computing? A: A DSP (Digital Signal Processor) is a specialised processor for real-time processing of signals like audio, video, or sensor data.
+	30	Q: What is an AI accelerator? A: A processor or chip designed to perform artificial intelligence tasks more efficiently than general-purpose CPUs or GPUs.
+	31	Q: What is a neuromorphic processor? A: A processor designed to mimic the structure and function of the human brain’s neural networks for AI applications.
+	32	Q: What is quantum computing? A: A computing paradigm using quantum bits (qubits) that can represent 0 and 1 simultaneously, enabling certain calculations to be performed much faster than classical computers.
+	33	Q: How do FPGAs fit into modern computing? A: FPGAs (Field-Programmable Gate Arrays) are chips that can be reprogrammed after manufacturing to perform specific hardware tasks.
+
+Section 6: Research Challenges and Future Directions
+	34	Q: What is Moore’s Law? A: The observation that the number of transistors on a chip roughly doubles every two years, historically linked to performance growth.
+	35	Q: What is Dennard scaling? A: A principle stating that as transistors get smaller, their power density stays constant — a trend that has broken down in modern chips.
+	36	Q: Why is the “end” of Moore’s Law significant? A: It means performance improvements must come from architectural innovations, not just smaller transistors.
+	37	Q: What is the von Neumann bottleneck? A: A limitation in traditional CPU design where the speed of moving data between CPU and memory constrains performance.
+	38	Q: What is heterogeneous computing? A: Using different types of processors (e.g., CPUs + GPUs) in the same system to optimise for different workloads.
+	39	Q: What is parallel processing? A: Splitting a task into multiple smaller parts that can be processed simultaneously on different cores or processors.
+	40	Q: What is Amdahl’s Law? A: A formula that shows the limits of speedup from parallel processing based on the portion of a program that must run serially.
+	41	Q: Why does Amdahl’s Law matter for processor research? A: It shows that beyond a point, adding more cores yields diminishing performance returns.
+	42	Q: What is speculative execution? A: A CPU performance technique where the processor guesses which instructions will be needed next and executes them in advance.
+	43	Q: What security issues have arisen from speculative execution? A: Vulnerabilities like Spectre and Meltdown exploit speculative execution to leak sensitive data.
+	44	Q: What is processor scalability? A: The ability of a processor design to maintain efficiency and performance as the number of cores or workload size increases.
+	45	Q: What is one major research direction in CPU design today? A: Developing processors that balance performance, energy efficiency, and security in the face of slowing transistor scaling.
+Topic 2 — Machine-Code Programs (45 Q&As)
+
+Section 1: Basics of Machine Code
+	1	Q: What is machine code? A: Machine code is a set of binary instructions that a CPU can execute directly without translation.
+	2	Q: What are binary instructions? A: Binary instructions are sequences of 0s and 1s that represent specific operations for the processor.
+	3	Q: Why do CPUs use binary? A: Because CPUs are built from electronic circuits that detect two states — on (1) and off (0).
+	4	Q: What is an instruction set architecture (ISA)? A: An ISA is the complete set of machine instructions that a CPU can execute, along with their binary representations and formats.
+	5	Q: What is an opcode in machine code? A: An opcode (operation code) is the part of a machine instruction that specifies the operation to be performed.
+	6	Q: What are operands in machine code? A: Operands are the data or memory addresses that the operation specified by the opcode will use.
+	7	Q: What is the fetch-decode-execute cycle? A: It is the process where the CPU fetches an instruction from memory, decodes what it means, and executes it.
+	8	Q: What is program counter (PC) in a CPU? A: The program counter is a register that stores the address of the next instruction to execute.
+
+Section 2: Machine Code and Assembly Language
+	9	Q: What is assembly language? A: Assembly language is a low-level programming language that uses human-readable mnemonics instead of binary codes.
+	10	Q: How is assembly language related to machine code? A: Assembly is a direct textual representation of machine code, with a one-to-one mapping between instructions.
+	11	Q: What is an assembler? A: An assembler is a program that converts assembly language into machine code.
+	12	Q: Why is assembly language easier for humans to work with than machine code? A: Because mnemonics like ADD or MOV are more understandable than binary patterns like 100010.
+
+Section 3: Types of Instruction Sets
+	13	Q: What does CISC stand for? A: CISC stands for Complex Instruction Set Computer, an ISA design with many specialised instructions.
+	14	Q: What does RISC stand for? A: RISC stands for Reduced Instruction Set Computer, an ISA design with fewer, simpler, and faster instructions.
+	15	Q: What does VLIW stand for? A: VLIW stands for Very Long Instruction Word, an ISA approach where multiple operations are encoded in a single long instruction.
+	16	Q: How do CISC and RISC differ in design philosophy? A: CISC focuses on complex instructions that can do more in a single operation, while RISC uses simple instructions executed very quickly.
+	17	Q: Which ISA is used by most desktop and laptop CPUs today? A: Most use the x86 or x86-64 CISC-based architecture.
+	18	Q: Which ISA is commonly used in mobile and embedded systems? A: ARM, a RISC-based architecture, is dominant in mobile and embedded devices.
+
+Section 4: Memory Access in Machine Code
+	19	Q: What is an addressing mode? A: An addressing mode is the method by which a machine instruction specifies the location of its data.
+	20	Q: What is immediate addressing? A: The data is directly included in the instruction itself.
+	21	Q: What is register addressing? A: The instruction specifies a register that contains the data.
+	22	Q: What is direct memory addressing? A: The instruction specifies the memory address where the data is located.
+	23	Q: What is indirect memory addressing? A: The instruction points to a register or memory location that holds the actual address of the data.
+
+Section 5: Executing Machine Code
+	24	Q: How does the CPU know which instruction to execute next? A: It uses the program counter to keep track of the next instruction’s memory address.
+	25	Q: What happens during the decode stage of the instruction cycle? A: The CPU interprets the binary opcode to determine which operation to perform.
+	26	Q: What happens during the execute stage of the instruction cycle? A: The CPU carries out the operation defined by the instruction, using the provided operands.
+	27	Q: What is a branch instruction? A: A machine code instruction that changes the sequence of execution to a different address.
+	28	Q: What is a conditional branch? A: A branch instruction that occurs only if a specific condition is true, such as a comparison result.
+	29	Q: What is a subroutine call in machine code? A: An instruction that jumps to a separate block of code, executes it, and then returns to the main program.
+
+Section 6: Machine Code and Performance
+	30	Q: What is instruction latency? A: The number of clock cycles needed to complete an instruction.
+	31	Q: What is instruction throughput? A: The number of instructions a CPU can complete in a given time period.
+	32	Q: Why does instruction set complexity affect performance? A: More complex instructions can take longer to decode and execute.
+	33	Q: How does pipelining affect machine code execution? A: It allows multiple instructions to be in different stages of execution simultaneously, improving throughput.
+
+Section 7: Security and Reliability
+	34	Q: What is a buffer overflow in machine code execution? A: An error where a program writes more data to a memory buffer than it can hold, potentially overwriting other data or code.
+	35	Q: What is shellcode? A: Small machine code payloads used in security exploits to take control of a system.
+	36	Q: What is code injection? A: A security vulnerability where malicious machine code or instructions are inserted into a program’s execution flow.
+	37	Q: What is memory alignment in machine code execution? A: The arrangement of data in memory to match the CPU’s expected boundaries for faster access.
+
+Section 8: Research and Trends
+	38	Q: What is microcode in CPUs? A: Microcode is a layer of low-level instructions in a CPU that implement complex machine code instructions.
+	39	Q: Why do CPU manufacturers update microcode? A: To fix bugs, improve performance, or patch security vulnerabilities.
+	40	Q: What is instruction set virtualisation? A: A method that allows a CPU to emulate a different instruction set, enabling compatibility with other architectures.
+	41	Q: What is ISA extension? A: Adding new instructions to an existing ISA to support new capabilities, such as SIMD for parallel data processing.
+	42	Q: What does SIMD stand for? A: SIMD stands for Single Instruction, Multiple Data — a method for processing multiple data points with a single instruction.
+	43	Q: How do SIMD instructions improve performance? A: They enable parallel processing of large datasets, useful in graphics and scientific computing.
+	44	Q: What is an example of a modern SIMD extension? A: Intel’s AVX (Advanced Vector Extensions) is a SIMD extension for x86 processors.
+	45	Q: What is one current research goal in machine code design? A: Creating more energy-efficient and secure instruction sets while maintaining performance and compatibility.
+Topic 3 — Roles & Forms of Computers in Modern Life (50 Q&As)
+
+Section 1: Foundations & General-Purpose Computing
+	1	Q: What is a general-purpose computer? A: A general-purpose computer is a device capable of running many different programs to perform a wide range of tasks.
+	2	Q: How do general-purpose computers differ from specialised computers? A: General-purpose computers can be reprogrammed for various tasks, while specialised computers are designed for specific functions only.
+	3	Q: What are examples of general-purpose computers? A: Desktop PCs, laptops, and servers.
+	4	Q: Why are general-purpose computers important in modern life? A: Their adaptability makes them useful in business, education, science, and entertainment.
+	5	Q: What does programmability mean in the context of computers? A: The ability to load and run different sets of instructions without altering the hardware.
+
+Section 2: Evolving Forms of Computing Devices
+	6	Q: What are handheld computing devices? A: Small, portable computers such as smartphones and tablets.
+	7	Q: How do smartphones fit the definition of a computer? A: They contain processors, memory, storage, and software capable of running various applications.
+	8	Q: What are embedded systems? A: Computing systems integrated into larger devices to control specific functions.
+	9	Q: What does the term “hidden computer” mean? A: It refers to computing devices embedded in everyday objects that are not visibly recognised as computers.
+	10	Q: Give examples of hidden computers in daily life. A: Car engine control units, washing machine controllers, and smart thermostats.
+
+Section 3: Large-Scale Computing
+	11	Q: What is a mainframe computer? A: A large, powerful computer used by organisations for bulk data processing and critical applications.
+	12	Q: What is a supercomputer? A: The most powerful class of computers, capable of performing extremely high-speed calculations.
+	13	Q: What are supercomputers used for? A: Climate modelling, scientific simulations, cryptography, and advanced AI research.
+	14	Q: How is supercomputer performance measured? A: Often in FLOPS (Floating-Point Operations Per Second).
+	15	Q: What is parallel processing in supercomputers? A: Splitting a problem into smaller tasks that are solved simultaneously by multiple processors.
+
+Section 4: The Internet of Things (IoT)
+	16	Q: What is the Internet of Things (IoT)? A: A network of physical devices embedded with sensors, software, and connectivity to exchange data over the internet.
+	17	Q: Give three examples of IoT devices. A: Smart home assistants, connected fitness trackers, and industrial sensors.
+	18	Q: How does IoT change the role of processors? A: Processors must be energy-efficient, small, and able to handle real-time communication.
+	19	Q: What is edge computing in IoT? A: Processing data near the source of generation instead of sending it to a central server.
+	20	Q: Why is edge computing important for IoT? A: It reduces latency, saves bandwidth, and improves responsiveness.
+
+Section 5: Wearable & Implantable Devices
+	21	Q: What is wearable computing? A: Technology worn on the body, such as smartwatches and augmented reality glasses.
+	22	Q: What is an implantable computing device? A: A device embedded within the human body to monitor or enhance biological functions.
+	23	Q: Give an example of an implantable device. A: A pacemaker with wireless monitoring capabilities.
+	24	Q: What unique challenges do wearables and implantables pose for processor design? A: Ultra-low power consumption, small size, and secure wireless communication.
+	25	Q: Why is low heat generation important in wearable and implantable devices? A: To ensure comfort and safety for the user.
+
+Section 6: Impact on Processor Design
+	26	Q: How has the shift to mobile computing changed processor priorities? A: Power efficiency and thermal control are now as important as raw performance.
+	27	Q: What is system-on-chip (SoC) design? A: Integrating all major components of a computer — CPU, GPU, memory controllers — onto a single chip.
+	28	Q: Why are SoCs popular in mobile and IoT devices? A: They save space, reduce power consumption, and improve performance per watt.
+	29	Q: What is heterogeneous processing? A: Using different types of cores in a processor, each optimised for specific tasks.
+	30	Q: What is ARM’s “big.LITTLE” architecture? A: A heterogeneous CPU design combining high-performance cores with low-power cores for energy efficiency.
+
+Section 7: Parallel Processing & Amdahl’s Law
+	31	Q: What is parallel processing? A: Executing multiple tasks at the same time to increase performance.
+	32	Q: Why is parallel processing important for modern workloads? A: Many applications, like video rendering and AI, require handling large datasets quickly.
+	33	Q: What is Amdahl’s Law? A: A principle that shows the maximum speedup of a program is limited by the portion that must be executed sequentially.
+	34	Q: How does Amdahl’s Law limit performance improvements? A: Even with many processors, the non-parallel part of the task creates a bottleneck.
+	35	Q: How does Amdahl’s Law affect processor design? A: It encourages balancing core count with single-thread performance improvements.
+
+Section 8: Daily Life Interaction Changes
+	36	Q: How have smartphones changed the way people interact with computing? A: They provide constant, portable access to information and services.
+	37	Q: How has the cloud influenced personal computing? A: Many applications and storage systems now run remotely, reducing reliance on local processing.
+	38	Q: What is ubiquitous computing? A: The integration of computing into everyday life until it becomes seamlessly embedded in the environment.
+	39	Q: How do voice assistants illustrate ubiquitous computing? A: They provide hands-free computing integrated into daily tasks.
+	40	Q: What is augmented reality (AR) in computing? A: Overlaying digital information on the real world through devices like AR glasses.
+
+Section 9: Security & Privacy Considerations
+	41	Q: Why is security important in IoT and wearable devices? A: They often handle sensitive personal data and can be targets for cyberattacks.
+	42	Q: What is data encryption in computing? A: Transforming data into a coded form to prevent unauthorised access.
+	43	Q: Why is secure boot important for modern devices? A: It ensures only trusted software runs on the device at startup.
+	44	Q: What is over-the-air (OTA) updating? A: Delivering software updates wirelessly without physical connection to the device.
+	45	Q: Why are OTA updates important for security? A: They allow rapid patching of vulnerabilities in connected devices.
+
+Section 10: Future Directions
+	46	Q: What is the role of AI in future computing devices? A: AI will enable more personalised, context-aware computing experiences.
+	47	Q: How might quantum computing affect supercomputers? A: It could dramatically accelerate solutions to problems that are hard for classical computers.
+	48	Q: What is the expected trend in wearable computing? A: Increased integration into clothing and more advanced health monitoring.
+	49	Q: What is ambient computing? A: Computing that adapts to the user’s environment and actions without explicit commands.
+	50	Q: How will processors evolve for emerging technologies? A: They will focus on balancing performance, energy efficiency, connectivity, and security to meet diverse application needs.
+
+Section 1: ARM Basics and History
+	1	Q: What does ARM stand for? A: ARM originally stood for Acorn RISC Machine, later renamed Advanced RISC Machines; today it refers to a family of RISC-based processor architectures.
+	2	Q: What is RISC in processor design? A: RISC stands for Reduced Instruction Set Computer, a CPU design philosophy that uses a small set of simple instructions executed quickly.
+	3	Q: How does RISC differ from CISC? A: RISC uses fewer, simpler instructions for speed and efficiency, while CISC (Complex Instruction Set Computer) includes many complex instructions that may take longer to execute.
+	4	Q: Why was ARM architecture originally developed? A: It was developed in the 1980s for low-cost, energy-efficient personal computers.
+	5	Q: What is ARM Holdings? A: ARM Holdings is the company that designs ARM processor architectures and licenses them to manufacturers rather than manufacturing chips themselves.
+
+Section 2: ARM Design Principles
+	6	Q: Why is ARM architecture known for energy efficiency? A: Its simplified instruction set requires fewer transistors and less power per instruction.
+	7	Q: What is instruction pipelining in ARM CPUs? A: A technique that allows overlapping execution of instructions to improve throughput.
+	8	Q: What is load/store architecture in ARM? A: A design where memory is accessed only via dedicated load and store instructions, improving efficiency.
+	9	Q: What is conditional execution in ARM? A: The ability to execute most instructions only if certain conditions are met, reducing branch instructions.
+	10	Q: How does ARM achieve smaller chip sizes? A: By using simpler circuits and focusing on efficiency rather than maximum raw performance.
+
+Section 3: Embedded Systems Overview
+	11	Q: What is an embedded system? A: A computer designed for a dedicated function, often within a larger system.
+	12	Q: How do embedded systems differ from general-purpose computers? A: Embedded systems are optimised for specific tasks, with fixed hardware and software configurations.
+	13	Q: Give three examples of embedded systems. A: Car engine control units, microwave ovens, and industrial robots.
+	14	Q: Why are ARM processors common in embedded systems? A: They offer high performance per watt, low heat generation, and flexible licensing.
+	15	Q: What is firmware in embedded systems? A: Permanent software stored in read-only memory (ROM) that controls hardware functions.
+
+Section 4: ARM in Mobile and IoT
+	16	Q: Why is ARM architecture dominant in smartphones? A: It balances processing power, battery life, and compact design.
+	17	Q: What is an SoC in mobile devices? A: A System-on-Chip that integrates CPU, GPU, memory controllers, and other components into a single chip.
+	18	Q: How does ARM architecture benefit IoT devices? A: Low power use, small size, and scalability make ARM ideal for sensors and connected devices.
+	19	Q: What is ARM Cortex? A: A family of ARM processor cores designed for different performance and power needs.
+	20	Q: What is the ARM Cortex-M series used for? A: Ultra-low-power embedded applications like wearables and industrial controllers.
+
+Section 5: ARM Licensing Model
+	21	Q: How does ARM’s business model work? A: ARM designs processor architectures and licenses them to other companies to manufacture and customise.
+	22	Q: Name three companies that manufacture ARM-based chips. A: Qualcomm, Apple, and Samsung.
+	23	Q: Why is ARM’s licensing model important for embedded systems? A: It allows manufacturers to tailor ARM designs for specific applications.
+	24	Q: What is a custom ARM core? A: A CPU core built by a manufacturer using the ARM instruction set but with their own microarchitecture design.
+	25	Q: Give an example of a custom ARM core. A: Apple’s M-series chips use ARM instruction sets but have unique Apple-designed cores.
+
+Section 6: ARM Performance and Efficiency
+	26	Q: What is performance per watt? A: A measure of how much computing work can be done for each watt of power consumed.
+	27	Q: Why is performance per watt important in embedded systems? A: Many embedded systems rely on batteries or have strict power budgets.
+	28	Q: What is ARM big.LITTLE architecture? A: A heterogeneous design combining high-performance cores with power-efficient cores.
+	29	Q: How does big.LITTLE improve energy efficiency? A: It runs demanding tasks on big cores and background tasks on little cores.
+	30	Q: What is ARM TrustZone? A: A hardware-based security feature that creates a secure execution environment within the CPU.
+
+Section 7: Embedded Systems Design Challenges
+	31	Q: Why is real-time processing important in some embedded systems? A: Certain applications, like automotive safety, require responses within strict time limits.
+	32	Q: What is a real-time operating system (RTOS)? A: An OS designed to process data and respond predictably within fixed time constraints.
+	33	Q: Why is low heat generation important in embedded systems? A: Many operate in enclosed spaces without active cooling.
+	34	Q: What is non-volatile memory in embedded systems? A: Memory that retains data even when power is off, such as flash storage.
+	35	Q: Why is security critical in IoT embedded systems? A: They are often connected to networks and can be exploited if insecure.
+
+Section 8: Trends and Future Directions
+	36	Q: What is ARMv9? A: The latest ARM architecture version with improved performance, AI capabilities, and enhanced security.
+	37	Q: How is ARM architecture evolving for AI workloads? A: By integrating specialised machine learning accelerators into SoCs.
+	38	Q: Why are ARM processors being used in laptops and desktops now? A: Improved performance has made them competitive with traditional x86 CPUs.
+	39	Q: What is RISC-V, and why is it relevant to ARM? A: RISC-V is an open-source ISA that competes with ARM in embedded and mobile markets.
+	40	Q: How might ARM face competition in the future? A: From open architectures like RISC-V and specialised AI chips.
+
+Section 9: ARM in Industry Applications
+	41	Q: How is ARM used in automotive systems? A: For engine control, infotainment, and driver-assistance systems.
+	42	Q: How is ARM used in industrial automation? A: In robotics, sensor networks, and process control systems.
+	43	Q: How is ARM used in consumer electronics? A: In smart TVs, gaming consoles, and home automation devices.
+	44	Q: Why is ARM suitable for medical devices? A: Low power use, high reliability, and support for secure data handling.
+	45	Q: What is ARM’s role in 5G technology? A: ARM processors power many 5G base stations and mobile devices.
+
+Section 10: Summary & Research Outlook
+	46	Q: What is the main advantage of ARM in embedded systems? A: High performance with low power consumption.
+	47	Q: How does ARM’s scalability benefit manufacturers? A: It can be used in devices from tiny sensors to powerful laptops.
+	48	Q: What is one ongoing research area for ARM processors? A: Enhancing AI processing while maintaining efficiency.
+	49	Q: How does ARM balance performance and battery life? A: Through efficient instruction sets, SoC integration, and heterogeneous cores.
+	50	Q: Why is ARM likely to remain important in the future? A: Its flexibility, licensing model, and efficiency align with trends in mobile, IoT, and embedded computing.
+Topic 5 — Lesson 3: Key Takeaways Expanded (45 Q&As)
+
+Section 1: Versatility of General-Purpose Computers
+	1	Q: What is a general-purpose computer? A: A device capable of running many different programs to perform a variety of tasks.
+	2	Q: Why are general-purpose computers versatile? A: Because they can be reprogrammed for different applications without changing the hardware.
+	3	Q: Give examples of tasks a general-purpose computer can perform. A: Word processing, web browsing, video editing, data analysis, and gaming.
+	4	Q: How do general-purpose computers differ from embedded systems? A: General-purpose computers are flexible and multipurpose, while embedded systems are optimised for one specific function.
+	5	Q: Why are general-purpose computers essential across many domains? A: Their adaptability allows them to be used in business, research, education, and entertainment.
+
+Section 2: Forms of Computing Devices
+	6	Q: What is a handheld computing device? A: A portable computer that can be held and used in one’s hands, such as a smartphone or tablet.
+	7	Q: What is an embedded system? A: A dedicated computer integrated into a larger system to perform a specific task.
+	8	Q: What is a mainframe computer? A: A powerful, large-scale computer used by organisations for bulk data processing and critical applications.
+	9	Q: What is a supercomputer? A: The most powerful type of computer, capable of extremely high-speed processing for complex tasks.
+	10	Q: What does “hidden computer” mean? A: A computing system embedded in an everyday device, not visible to the user as a traditional computer.
+
+Section 3: Emerging Technologies
+	11	Q: What is the Internet of Things (IoT)? A: A network of connected devices that collect and exchange data over the internet.
+	12	Q: Give examples of IoT devices. A: Smart thermostats, wearable fitness trackers, and connected home security cameras.
+	13	Q: What is wearable computing? A: Computing devices worn on the body, such as smartwatches and augmented reality glasses.
+	14	Q: What is an implantable computing device? A: A device embedded inside the human body to monitor or enhance biological functions.
+	15	Q: Why are emerging technologies reshaping processor design? A: They demand low power use, compact size, constant connectivity, and specialised processing capabilities.
+
+Section 4: Parallel Processing
+	16	Q: What is parallel processing? A: Running multiple tasks simultaneously to improve performance.
+	17	Q: Why is parallel processing important in modern computing? A: It speeds up processing for workloads like graphics rendering, simulations, and AI training.
+	18	Q: What is Amdahl’s Law? A: A formula showing that the maximum speedup from parallel processing is limited by the portion of a task that must be done sequentially.
+	19	Q: How does Amdahl’s Law affect hardware design? A: It limits the benefit of adding more cores, encouraging improvements in single-thread performance too.
+	20	Q: What is an example of a task well-suited to parallel processing? A: Video encoding, where different frames can be processed at the same time.
+
+Section 5: Embedded Systems
+	21	Q: What is the main purpose of an embedded system? A: To carry out a dedicated function efficiently and reliably.
+	22	Q: Why are embedded systems important in industry? A: They power critical applications like factory automation, automotive safety, and medical devices.
+	23	Q: What is firmware in embedded systems? A: Permanent software stored in non-volatile memory that controls hardware behaviour.
+	24	Q: Why is low power consumption important in embedded systems? A: Many run on battery power or have heat dissipation limits.
+	25	Q: What is a real-time operating system (RTOS)? A: An OS that guarantees predictable response times for time-critical applications.
+
+Section 6: ARM Architecture Dominance
+	26	Q: Why is ARM architecture popular in embedded and mobile devices? A: It delivers high performance with low power consumption.
+	27	Q: What is RISC in processor design? A: Reduced Instruction Set Computer — a design with fewer, simpler instructions for efficiency.
+	28	Q: How does ARM architecture differ from x86 architecture? A: ARM uses RISC principles for energy efficiency, while x86 uses CISC with more complex instructions.
+	29	Q: What is big.LITTLE in ARM processors? A: A heterogeneous architecture combining high-performance and low-power cores.
+	30	Q: What is ARM TrustZone? A: A hardware feature providing a secure execution environment within the CPU.
+
+Section 7: Security and Connectivity
+	31	Q: Why is security important for IoT devices? A: They handle personal or sensitive data and can be exploited if unsecured.
+	32	Q: What is data encryption? A: Encoding data so only authorised parties can read it.
+	33	Q: What is secure boot? A: A process ensuring only trusted software is loaded when a device starts up.
+	34	Q: Why is secure firmware updating important? A: To patch vulnerabilities and improve performance without physical device access.
+	35	Q: What is over-the-air (OTA) updating? A: Delivering software or firmware updates wirelessly.
+
+Section 8: Future Directions
+	36	Q: How will AI affect future general-purpose computing? A: AI will enable more adaptive, personalised, and context-aware computing.
+	37	Q: What is ambient computing? A: Computing that seamlessly integrates into the environment and responds automatically to the user’s needs.
+	38	Q: How will IoT devices evolve in the next decade? A: They will become more autonomous, energy-efficient, and interconnected.
+	39	Q: What is edge AI? A: Running AI models directly on devices rather than in the cloud to improve speed and privacy.
+	40	Q: How will ARM processors adapt for AI workloads? A: By integrating dedicated AI accelerators into SoCs.
+
+Section 9: Consolidation & Summary
+	41	Q: Why are general-purpose computers, embedded systems, and IoT devices all important? A: Together they cover everything from flexible computing to specialised, always-connected functions.
+	42	Q: What is the trade-off between versatility and efficiency in computing devices? A: Versatile devices can do more but often use more power; efficient devices are limited in scope but highly optimised.
+	43	Q: Why will parallel processing continue to be important? A: Workloads keep growing in complexity and size, requiring simultaneous task execution.
+	44	Q: Why is ARM likely to remain dominant in embedded computing? A: Its efficiency, scalability, and licensing model align with market needs.
+	45	Q: What is the key takeaway from Lesson 3? A: Modern computing is an ecosystem of diverse devices and architectures, shaped by performance needs, energy efficiency, and emerging technology trends.
